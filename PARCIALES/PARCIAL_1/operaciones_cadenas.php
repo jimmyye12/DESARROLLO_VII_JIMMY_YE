@@ -8,7 +8,6 @@ print_r($partes);
 
 for ($i = 0; $i < count ($partes); $i++){
 if ($partes [$i] == $partes) {
-echo 1;
 
 }
 }
