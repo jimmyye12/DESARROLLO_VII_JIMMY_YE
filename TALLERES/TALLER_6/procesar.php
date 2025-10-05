@@ -11,9 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     foreach ($campos as $campo) {
         if (isset($_POST[$campo])) {
             $valor = $_POST[$campo];
-            $funcionSanitizacion = "sanitizar" . ucfirst($campo); // Generamos el nombre de la función de sanitización
+            $funcionSanitizacion = "sanitizar" . ucfirst($campo); 
             if (function_exists($funcionSanitizacion)) {
-                $valorSanitizado = call_user_func($funcionSanitizacion, $valor); // Llamamos a la función de sanitización
+                $valorSanitizado = call_user_func($funcionSanitizacion, $valor); 
                 $datos[$campo] = $valorSanitizado;
 
                 // Validar el valor después de sanitizar

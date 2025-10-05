@@ -3,6 +3,10 @@ function validarNombre($nombre) {
     return !empty($nombre) && strlen($nombre) <= 50;
 }
 
+function validarDate ($date) {
+    return !empty($date) && strlen($date) >= 0 && strlen($date) <= 0;
+}
+
 function validarEmail($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
