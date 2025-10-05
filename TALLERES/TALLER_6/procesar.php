@@ -7,18 +7,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $datos = [];
 
     // Procesar y validar cada campo
-    $campos = ['nombre', 'email', 'edad', 'sitio_web', 'genero', 'intereses', 'comentarios'];
+    $campos = ['nombre', 'email', 'edad', 'sitio_web', 'genero', 'intereses', 'comentarios', 'date'];
     foreach ($campos as $campo) {
         if (isset($_POST[$campo])) {
             $valor = $_POST[$campo];
-            $valorSanitizado = call_user_func("sanitizar" . ucfirst($campo), $valor);
-            $datos[$campo] = $valorSanitizado;
+            $funcionSanitizacion = "sanitizar" . ucfirst($campo); // Generamos el nombre de la función de sanitización
+            if (function_exists($funcionSanitizacion)) {
+                $valorSanitizado = call_user_func($funcionSanitizacion, $valor); // Llamamos a la función de sanitización
+                $datos[$campo] = $valorSanitizado;
 
-            if (!call_user_func("validar" . ucfirst($campo), $valorSanitizado)) {
-                $errores[] = "El campo $campo no es válido.";
+                // Validar el valor después de sanitizar
+                if (!call_user_func("validar" . ucfirst($campo), $valorSanitizado)) {
+                    $errores[] = "El campo $campo no es válido.";
+                }
+            } else {
+                $errores[] = "Función de sanitización no encontrada para el campo $campo.";
             }
         }
     }
+
+    // Calcular la edad 
+    if (isset($_POST['date'])) {
+        $fechaNacimiento = $_POST['date'];
+        $fechaNacimiento = new DateTime($fechaNacimiento);
+        $fechaActual = new DateTime();
+        $edad = $fechaActual->diff($fechaNacimiento)->y;
+        $datos['edad'] = $edad; 
 
     // Procesar la foto de perfil
     if (isset($_FILES['foto_perfil']) && $_FILES['foto_perfil']['error'] !== UPLOAD_ERR_NO_FILE) {
@@ -37,22 +51,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Mostrar resultados o errores
     if (empty($errores)) {
         echo "<h2>Datos Recibidos:</h2>";
+        echo "<table border='1'>";
         foreach ($datos as $campo => $valor) {
+            echo "<tr>";
+            echo "<th>" . ucfirst($campo) . "</th>";
             if ($campo === 'intereses') {
-                echo "$campo: " . implode(", ", $valor) . "<br>";
+                echo "<td>" . implode(", ", $valor) . "</td>";
             } elseif ($campo === 'foto_perfil') {
-                echo "$campo: <img src='$valor' width='100'><br>";
+                echo "<td><img src='$valor' width='100'></td>";
             } else {
-                echo "$campo: $valor<br>";
+                echo "<td>$valor</td>";
             }
+            echo "</tr>";
         }
+        echo "</table>";
     } else {
         echo "<h2>Errores:</h2>";
+        echo "<ul>";
         foreach ($errores as $error) {
-            echo "$error<br>";
+            echo "<li>$error</li>";
         }
+        echo "</ul>";
     }
-} else {
-    echo "Acceso no permitido.";
+}
+
+echo "<br><a href='formulario.html'>Volver al formulario</a>";
 }
 ?>
