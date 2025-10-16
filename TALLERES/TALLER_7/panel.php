@@ -17,6 +17,7 @@ if(!isset($_SESSION['usuario'])) {
 <body>
     <h2>Bienvenido, <?php echo htmlspecialchars($_SESSION['usuario']); ?>!</h2>
     <p>Esta es tu área personal.</p>
+    <p><a href="productos.php">Realizar una compra</a></p>
     <a href="logout.php">Cerrar Sesión</a>
 </body>
 </html>

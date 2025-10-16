@@ -11,7 +11,7 @@ $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 
 // Si ya hay una sesión activa, redirigir al panel
 if(isset($_SESSION['usuario'])) {
-    header("Location: panel.php");
+    header("Location: productos.php");
     exit();
 }
 
