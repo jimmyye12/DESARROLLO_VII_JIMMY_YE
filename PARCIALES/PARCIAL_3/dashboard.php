@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'datos.php';
+$usuarios = usuarios();
 
 if (!isset($_SESSION['usuario'], $_SESSION['rol'])) {
     header("Location: login.php");

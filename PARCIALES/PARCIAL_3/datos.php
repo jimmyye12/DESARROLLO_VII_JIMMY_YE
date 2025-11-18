@@ -1,5 +1,6 @@
 <?php
-$usuarios = [
+function usuarios():array{
+    return [
     'profesor1' => ['password' => 'profe123','rol'=> 'PROFESOR'],
     
     'jimmy' => ['password' => 'jimmy123','rol'=> 'ESTUDIANTE','nota'=> 85],
@@ -10,3 +11,4 @@ $usuarios = [
     
     'rosa' => ['password' => 'rosa123','rol'=> 'ESTUDIANTE','nota'=> 88]
 ];
+}

@@ -3,6 +3,7 @@
 session_start();
 require 'datos.php';
 
+$usuarios = usuarios();
 $errores = [];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
