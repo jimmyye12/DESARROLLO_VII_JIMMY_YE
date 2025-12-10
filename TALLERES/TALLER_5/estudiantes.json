@@ -1,0 +1,163 @@
+{
+    "estudiantes": {
+        "1": {
+            "id": 1,
+            "nombre": "Ana Torres",
+            "edad": 20,
+            "carrera": "Ingenieria en Sistemas",
+            "materias": {
+                "Programacion": 95,
+                "Bases de Datos": 88,
+                "Matematicas": 90
+            },
+            "promedio": 91,
+            "flags": [
+                "Honor Roll"
+            ]
+        },
+        "2": {
+            "id": 2,
+            "nombre": "Luis Gomez",
+            "edad": 22,
+            "carrera": "Medicina",
+            "materias": {
+                "Anatomia": 70,
+                "Bioqu\u00edmica": 65,
+                "Fisiologia": 72
+            },
+            "promedio": 69,
+            "flags": []
+        },
+        "3": {
+            "id": 3,
+            "nombre": "Maria Lopez",
+            "edad": 19,
+            "carrera": "Derecho",
+            "materias": {
+                "Derecho Civil": 85,
+                "Derecho Penal": 80,
+                "Derecho Constitucional": 78
+            },
+            "promedio": 81,
+            "flags": []
+        },
+        "4": {
+            "id": 4,
+            "nombre": "Carlos Perez",
+            "edad": 21,
+            "carrera": "Ingenieria Industrial",
+            "materias": {
+                "Estadistica": 55,
+                "Mecanica": 60,
+                "Produccion": 58
+            },
+            "promedio": 57.67,
+            "flags": [
+                "En riesgo academico",
+                "Materias reprobadas"
+            ]
+        },
+        "5": {
+            "id": 5,
+            "nombre": "Sofida Ramirez",
+            "edad": 23,
+            "carrera": "Psicologia",
+            "materias": {
+                "Psicologia General": 92,
+                "Neurociencia": 89,
+                "Psicologia Infantil": 94
+            },
+            "promedio": 91.67,
+            "flags": [
+                "Honor Roll"
+            ]
+        },
+        "6": {
+            "id": 6,
+            "nombre": "Daniel Castillo",
+            "edad": 20,
+            "carrera": "Arquitectura",
+            "materias": {
+                "Dibujo Tecnico": 75,
+                "Historia del Arte": 68,
+                "Diseño": 80
+            },
+            "promedio": 74.33,
+            "flags": []
+        },
+        "7": {
+            "id": 7,
+            "nombre": "Gabriela Mendoza",
+            "edad": 18,
+            "carrera": "Ingenieria en Sistemas",
+            "materias": {
+                "Algoritmos": 98,
+                "Inteligencia Artificial": 96,
+                "Redes": 94
+            },
+            "promedio": 96,
+            "flags": [
+                "Honor Roll"
+            ]
+        },
+        "8": {
+            "id": 8,
+            "nombre": "Ricardo Vargas",
+            "edad": 24,
+            "carrera": "Contabilidad",
+            "materias": {
+                "Contabilidad I": 65,
+                "Contabilidad II": 60,
+                "Auditor\u00eda": 58
+            },
+            "promedio": 61,
+            "flags": [
+                "Materias reprobadas"
+            ]
+        },
+        "9": {
+            "id": 9,
+            "nombre": "Laura Fernandez",
+            "edad": 21,
+            "carrera": "Ingenieria Civil",
+            "materias": {
+                "Resistencia de Materiales": 82,
+                "Hidraulica": 85,
+                "Topografia": 80
+            },
+            "promedio": 82.33,
+            "flags": []
+        },
+        "10": {
+            "id": 10,
+            "nombre": "Miguel Herrera",
+            "edad": 22,
+            "carrera": "Medicina",
+            "materias": {
+                "Farmacologia": 91,
+                "Microbiologia": 93,
+                "Anatomia": 88
+            },
+            "promedio": 90.67,
+            "flags": [
+                "Honor Roll"
+            ]
+        },
+        "11": {
+            "id": 11,
+            "nombre": "jimmy",
+            "edad": 23,
+            "carrera": "lic",
+            "materias": [],
+            "promedio": 91,
+            "flags": []
+        }
+    },
+    "graduados": [],
+    "0": {
+        "nombre": "jimmy",
+        "edad": 23,
+        "carrera": "lic",
+        "nota": 90
+    }
+}
