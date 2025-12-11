@@ -41,41 +41,10 @@ switch ($action) {
     require BASE_PATH . 'views/login.php';
     break;
 
-  case 'edit':
-    $id = $_GET['id'] ?? null;
-
-    if ($id && $_SERVER['REQUEST_METHOD'] === 'POST') {
-      $itulo = $_POST['titulo'] ?? '';
-      $autor = $_POST['autor'] ?? '';
-      $isbn = $_POST['isbn'] ?? '';
-
-      if (!empty($titulo) && !empty($autor) && !empty($isbn)) {
-        $librosManager->actualizarLibro($id, $titulo, $autor, $isbn);
-      }
-      header('Location: ' . BASE_URL . "src/libros");
-      exit;
-    } elseif ($id) {
-      $libro = $librosManager->obtenerPorId($id);
-      if ($libro) {
-        require BASE_PATH . 'views/libros_edit.php';
-      } else {
-        header('Location: ' . BASE_URL);
-      }
-    }
-    break;
-
-  case 'delete':
-    $id = $_GET['id'] ?? null;
-    if ($id) {
-      $librosManager->eliminarLibro($id);
-    }
-    header('Location: ' . BASE_URL . "src/libros");
-    exit;
-
   default:
-    $libros = $librosManager->obtenerTodos();
+    $libros = $usuariosManager->crearUsuario();
 
-    require __DIR__ . '/views/catalogo_libros.php';
+    require __DIR__ . '/views/registro.php';
     break;
 }
 
